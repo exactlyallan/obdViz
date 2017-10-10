@@ -1,0 +1,39 @@
+{
+  "name": "obd2Viz",
+  "version": "0.0.1",
+  "description": "a-frame obd2 car data visualization in 3D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server ./src/index.js --port 8000",
+    "build": "webpack --config webpack.config.prod.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "a-frame",
+    "vr",
+    "obd2",
+    "car metrics",
+    "3D"
+  ],
+  "author": "exactly.allan@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "aframe": "^0.6.1",
+    "aframe-animation-component": "^3.2.5",
+    "css-loader": "^0.28.4",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.0",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "papaparse": "^4.3.6",
+    "sass-loader": "^6.0.6"
+  }
+}

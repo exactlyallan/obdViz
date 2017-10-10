@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="exactly.allan@gmail.com">
+    <meta name="description" content="OBD2 Car Data Visualization">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<link href="./styles/app.css" rel="stylesheet"><script type="text/javascript" src="bundle.js"></script></head>
+
+<body>
+    <!-- load button -->
+    <div class="load-button-wrap" title="click to upload OBD2 csv data">
+        <label for="upload-data">Upload Data</label>
+        <input type="file" id="upload-data" accept=".tsv, .csv, .txt">
+    </div>
+
+    <!-- A-frame -->
+    <a-scene antialias="false">
+        <a-entity camera position="0 20 40" look-controls wasd-controls></a-entity>
+        <a-sky color="#3c3b3b"></a-sky>
+        <!-- Loading Section -->
+        <a-icosahedron id="loading-ico" position="0 20 0" color="#FFF" radius="5" wireframe="true" animation="property: rotation; dur:8000; to:180 360 0; easing:linear; loop:true"></a-icosahedron>
+
+    </a-scene>
+</body>
+
+</html>

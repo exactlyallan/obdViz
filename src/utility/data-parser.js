@@ -20,7 +20,8 @@ var papaFile = function(input, callback) {
             newline: "", // auto-detect
             quoteChar: '"',
             comments: "#",
-            header: true,
+            dynamicTyping: true, // get ints etc
+            header: false, // easier to parse array
             skipEmptyLines: true,
             error: function(err, file, inputElem, reason) {
                 console.log("File loading error:", err, reason)
@@ -33,7 +34,6 @@ var papaFile = function(input, callback) {
         })
     }
 
-
 }
 
 // Map parsed results to array useable for viz
@@ -42,10 +42,41 @@ var parseDatafile = function(rawData) {
 	// if error 
 	if(rawData === null){
 		return (null)
-	}
+	}2
 
+    // data
+    var dataObj = {}
 
-    return (rawData)
+    // data max and min concurrently
+    // PSA: 65536 args https://bugs.webkit.org/show_bug.cgi?id=80797
+    var dataObjMaxMin = {}
+
+    // collect headers and remove white space
+    var headerAry = rawData.data[0].map((d,i)=>{
+        return(d.trim())
+    })
+
+    // add keys
+    dataObj.headers = headerAry;
+    for(var j=0; j<headerAry.length; j++){
+        dataObj[headerAry[j]] = [];
+        dataObjMaxMin[headerAry[j]] = {max:0, min:0}
+    }
+
+    // collect data, loop through each row skipping first header row
+    for(var i=1; i<rawData.data.length; i++){
+
+        // loop through each col, checking for max and min
+        for(var k=0; k<headerAry.length; k++){
+            dataObjMaxMin[headerAry[k]].max = Math.max(dataObjMaxMin[headerAry[k]].max, rawData.data[i][k])
+            dataObjMaxMin[headerAry[k]].min = Math.min(dataObjMaxMin[headerAry[k]].min, rawData.data[i][k])
+            
+            dataObj[headerAry[k]].push(rawData.data[i][k])
+        }
+
+    }
+
+    return ({data:dataObj, maxmin:dataObjMaxMin})
 
 }
 

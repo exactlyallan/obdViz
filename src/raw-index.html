@@ -10,10 +10,19 @@
 </head>
 
 <body>
-    <!-- load button -->
-    <div class="load-button-wrap" title="click to upload OBD2 csv data">
-        <label for="upload-data">Upload Data</label>
-        <input type="file" id="upload-data" accept=".tsv, .csv, .txt">
+    <!-- menu button -->
+    <div id="menu-btn" title="menu">&#9776;</div>
+
+    <!-- menu options -->
+    <div id="menu-wrap" class="zero-width">
+        <div id="load-button-wrap">
+          <label for="upload-data">Load Data &#8682;</label>
+          <input type="file" id="upload-data" accept=".tsv, .csv, .txt">
+          <div id="start-button">Visualize Data &#9094;</div>
+        </div>
+        <div id="options-wrap">
+            <div class="options-info">Select OBD data file to load, select attributes, then click visualize to view</div>
+        </div>
     </div>
 
     <!-- A-frame -->

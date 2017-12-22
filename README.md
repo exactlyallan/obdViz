@@ -1,9 +1,10 @@
-# A-frame Experiment 2: DNA Visualization
+# A-frame Experiment 3: OBD2 Car Data Visualization
 
 ## Description
 
-Visualizing raw 23andMe data in 3D via A-frame. [More details here](https://customercare.23andme.com/hc/en-us/articles/212196868-Accessing-and-Downloading-Your-Raw-Data)
+Visualizing car telemetrics data in 3D via A-frame, recorded with [OBD Fusion](https://www.obdsoftware.net/software/obdfusion).
 
+NOTE: work in progress.
 
 <hr>
 
@@ -37,7 +38,7 @@ To run on a simple express server after build:
 
 ## Demo
 
-[Live Demo](www.allanenemark.com/dnaVis)
+Live demo [https://exactlyallan.github.io/obdViz/](https://exactlyallan.github.io/obdViz/)
 
 
 

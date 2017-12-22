@@ -31,12 +31,12 @@ module.exports = {
         extensions: ['.js']
     },
     output: {
-        path: __dirname + '/public',
+        path: __dirname + '/docs',
         publicPath: '',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: './public'
+        contentBase: './docs'
     },
     plugins: [
         new HtmlWebpackPlugin({
